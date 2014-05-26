@@ -16,13 +16,13 @@ class SiteController < ApplicationController
   end
 
   def organizations
-    @organizations = User.all.paginate(per_page: 1, page: params[:page])
+    @organizations = User.all.paginate per_page: 10, page: params[:page]
   end
 
   def organizationFull
     raise ActiveRecord::RecordNotFound if params[:id].nil?
     @organization = User.find(params[:id])
-    @portfolios = @organization.portfolios.paginate page: params[:page], per_page: 1
+    @portfolios = @organization.portfolios.paginate page: params[:page], per_page: 9
     raise ActiveRecord::RecordNotFound if @organization.nil?
   end
 

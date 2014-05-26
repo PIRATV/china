@@ -16,15 +16,23 @@
   <%= '+' if @organization.phone.size > 10 and @organization.phone[0].to_i == 7 %><%= number_to_phone @organization.phone, area_code: true %>
   <%= '|' if @organization.phone.present? %>
   <%= mail_to @organization.email %>
+  <%= '|' if @organization.site.present? %>
+  <%= link_to_if @organization.site.present?, @organization.site.gsub(/^https?:\/\//i, ''), @organization.site.starts_with?('http') ? @organization.site : "http://#{@organization.site}", target: '_blank' %>
   <hr>
   <p>
-    <%= @organization.info %>
+    <%= simple_format(word_wrap @organization.info) %>
   </p>
 
-  <% @portfolios.each do |portfolio| %>
-    <%= render 'organizationFull', unit: portfolio %>
-  <% end %>
+  <div class="portfolio_image">
+    <% @portfolios.each do |portfolio| %>
+      <%= render 'organizationFull', unit: portfolio %>
+    <% end %>
+  </div>
+  <div class="clearfix"></div>
   <div id="pagination">
     <%= will_paginate @portfolios %>
+  </div>
+  <div class="link_back" style="text-align: center">
+    <%= link_to t('Back'), create_url('organizations') %>
   </div>
 </article>

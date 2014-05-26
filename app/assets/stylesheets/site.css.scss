@@ -26,3 +26,28 @@ input.hidden {
   color:#999;
   font-style:oblique;
 }
+
+.pagination {
+  ul, li {
+    list-style-type: none;
+  }
+  li {
+    display: inline;
+  }
+  display: block;
+  text-align: center;
+  margin: 15px auto;
+  font-size: 15px;
+}
+
+.portfolio_image {
+  margin: 30px auto;
+  width: 700px;
+  a {
+    display: inline-block;
+  }
+  .portfolio {
+    display: inline-block;
+    float:left;
+  }
+}

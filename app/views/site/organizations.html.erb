@@ -12,7 +12,10 @@
 <article class="post content organizations">
   <ul class="post-list">
     <% @organizations.each do |organization| %>
-      <%= render 'organization', organization: organization %>
+      <li>
+        <%= render 'organization', organization: organization %>
+      </li>
+      <hr>
     <% end %>
   </ul>
   <div id="pagination">

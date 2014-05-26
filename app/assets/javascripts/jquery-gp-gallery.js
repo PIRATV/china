@@ -2,8 +2,8 @@
     $.fn.gpGallery = function(selector, options) {
         var $settings = {
             is_first_big: true,
-            row_min_height: 180,
-            row_max_height: 250,
+            row_min_height: 100,
+            row_max_height: 200,
             row_max_width: null,
             gutter: 5
         };

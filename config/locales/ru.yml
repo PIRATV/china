@@ -19,6 +19,7 @@ ru:
   View and change information about the company: 'Просмотр и изменение информации о компании'
   Write to: 'Написать на'
   Information about company: 'Информация о компании'
+  More: 'Подробнее'
 
   will_paginate:
     previous_label: '«'
