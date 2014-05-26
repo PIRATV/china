@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html class="no-js" lang="<%= locale %>">
+<head>
+  <title><%= page_title yield(:title) %></title>
+  <meta charset="utf-8">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no">
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <link href="http://fonts.googleapis.com/css?family=Oswald:regular" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Junge' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<header class="clearfix">
+  <div class="container">
+    <%= link_to root_path, t(app_name), id: 'logo' %>
+    <ul class="social-icons">
+      <li>
+        <%= link_to create_url('language', 'english'), title: 'English' do %>
+          <%= image_tag image_path('flag_english.gif'), style: 'margin-top:5px' %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to create_url('language', 'russian'), title: 'Русский язык' do %>
+          <%= image_tag image_path('flag_russian.gif')  %>
+        <% end %>
+      </li>
+      <li><a href="#" class="icon flip">^</a></li>
+      <li><a href="#" class="icon">T</a></li>
+      <li><a href="#" class="icon">^</a></li>
+    </ul>
+    <nav class="clearfix">
+      <%= render 'layouts/menu' %>
+    </nav>
+  </div>
+</header>
+
+<section role="banner">
+  <%= yield(:banner) %>
+</section>
+
+<section class="container">
+  <%= yield %>
+  <div style="height: 30px"></div>
+  <%= render 'layouts/columns' %>
+</section>
+
+
+<%= render 'layouts/metrika' %>
+</body>
+</html>

@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+#pagination {
+    text-align: center;
+}
+
+ul.pager
+{
+    font-size:12px;
+    border:0;
+    margin:0;
+    padding:0;
+    line-height:100%;
+    display:inline;
+}
+
+ul.pager li
+{
+    display:inline;
+    margin:1px;
+}
+
+ul.pager a:link,
+ul.pager a:visited
+{
+    border:solid 1px #9aafe5;
+    font-weight:bold;
+    color:#0e509e;
+    padding:1px 6px;
+    text-decoration:none;
+}
+
+ul.pager .page a
+{
+    font-weight:normal;
+}
+
+ul.pager a:hover
+{
+    border:solid 1px #0e509e;
+}
+
+ul.pager .selected a
+{
+    background:#2e6ab1;
+    color:#FFFFFF;
+    font-weight:bold;
+}
+
+ul.pager .hidden a
+{
+    border:solid 1px #DEDEDE;
+    color:#888888;
+}
+a:visited {
+    text-decoration: none;
+    color: #0099cc;
+    border: 0px;
+    -moz-outline-style: none;
+}
+a:link {
+    text-decoration: none;
+    color: #0099cc;
+    border: 0px;
+    -moz-outline-style: none;
+}
+
+/**
+ * Hide first and last buttons by default.
+ */
+ul.pager .first,
+ul.pager .last
+{
+    /*display:none;*/
+}

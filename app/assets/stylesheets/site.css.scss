@@ -1,0 +1,28 @@
+// Place all the styles related to the site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#profilePage {
+  margin: 50px;
+  width: 600px;
+  strong {
+    display: inline-block;
+    width: 200px;
+  }
+  span {
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+  }
+}
+input.hidden {
+  display: none;
+}
+.photo-icon {
+  max-height: 30px;
+}
+
+.not_specified {
+  color:#999;
+  font-style:oblique;
+}

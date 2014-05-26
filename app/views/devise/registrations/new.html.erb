@@ -1,0 +1,48 @@
+<%= render '/devise/form', header: t('Sign up') %>
+
+<div style="width: 800px;margin: 10px auto">
+  <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div style="float: right" id="license">
+      <%= render 'license' %>
+    </div>
+    <div>
+      <%= f.label :firm, t(:firm) %>
+      <%= f.text_field :firm, autofocus: true, required: true %>
+    </div>
+
+    <div>
+      <%= f.label :phone, t(:phone) %>
+      <%= f.text_field :phone %>
+    </div>
+
+    <div>
+      <%= f.label :site, t(:site) %>
+      <%= f.text_field :site %>
+    </div>
+
+    <div>
+      <%= f.label :email, t(:email) %>
+      <%= f.email_field :email, required: true %>
+    </div>
+
+    <div>
+      <%= f.label :password, t(:password) %>
+      <%= f.password_field :password, required: true %></div>
+
+    <div>
+      <%= f.label :password_confirmation, t(:password_confirmation) %>
+      <%= f.password_field :password_confirmation, required: true %>
+    </div>
+
+    <div>
+      <%= f.label :info, t(:info) %>
+      <%= f.text_area :info, style: 'width:60%;height:100px' %>
+    </div>
+    <br>
+
+    <div><%= f.submit t('Sign up'), class: 'button inactive', id: 'btn' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+<% content_for :title, t('Our contact') %>
+<% content_for :banner do %>
+  <h1><%= t 'Contact' %></h1>
+<% end %>
+<% content_for :article do %>
+  <%= render 'contact_info' %>
+<% end %>
+<footer>
+
+  <h2><%= t('Contact us') %></h2>
+
+  <%= simple_form_for @contact, url: create_url('contacts'), html: {class: 'c-form'} do |f| %>
+
+    <div class="row">
+      <%= f.input :name, required: true %>
+    </div>
+    <div class="row">
+      <%= f.input :email, required: true %>
+    </div>
+    <div class="row">
+      <%= f.input :message, as: :text, required: true %>
+    </div>
+    <%= f.button :submit, t('Send message'), class: 'btn btn-primary', id: 'btn' %>
+    </form>
+
+  <% end %>
+
+</footer>

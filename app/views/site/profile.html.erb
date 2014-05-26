@@ -1,0 +1,56 @@
+<% content_for :banner do %>
+  <h1><%= t 'View and change information about the company' %> <%= @user.firm %></h1>
+<% end %>
+<% content_for :title, 'View and change information about the company' %>
+
+<div id="profilePage">
+  <%= simple_form_for @user, url: '/user/profile', remote: true do |f| %>
+    <p>
+      <strong><%= t :firm %>:</strong>
+             
+              <span class="<%= 'not_specified' if @user.firm.blank? %>">
+                <%= @user.firm.blank? ? 'Не указано' : @user.firm %>
+              </span>
+      <%= link_to '#', class: 'edit_info' do %>
+        <%= image_tag image_path('userfield_edit.gif') %>
+      <% end %>
+      <%= f.text_field :firm, class: 'hidden' %>
+    </p>
+
+    <p>
+      <strong><%= t :phone %>:</strong>
+              <span class="<%= 'not_specified' if @user.phone.blank? %>">
+                <%= @user.phone.blank? ? 'Не указано' : @user.phone %>
+              </span>
+      <%= link_to '#', class: 'edit_info' do %>
+        <%= image_tag image_path('userfield_edit.gif') %>
+      <% end %>
+      <%= f.text_field :phone, class: 'hidden' %>
+    </p>
+
+    <p>
+      <strong><%= t :site %>:</strong>
+        <% site = (@user.site.present? and not @user.site.starts_with?('http')) ? "http://#{@user.site}" : '' %>
+              <span class="<%= 'not_specified' if site.blank? %>">
+                <%= site.blank? ? 'Не указано' : link_to(site.sub(/https?:\/\//i, ''), site, target: '_blank') %>
+              </span>
+      <%= link_to '#', class: 'edit_info' do %>
+        <%= image_tag image_path('userfield_edit.gif') %>
+      <% end %>
+      <%= f.text_field :site, class: 'hidden' %>
+    </p>
+
+    <p>
+      <strong><%= t :info %>:</strong>
+              <span class="<%= 'not_specified' if @user.info.blank? %>">
+                <%= @user.info.blank? ? 'Не указано' : @user.info %>
+              </span>
+      <%= link_to '#', class: 'edit_info' do %>
+        <%= image_tag image_path('userfield_edit.gif') %>
+      <% end %>
+      <%= f.text_area :info, class: 'hidden', style: 'width:60%;height:100px' %>
+    </p>
+
+  <% end %>
+  <div class="clear"></div>
+</div>

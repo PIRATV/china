@@ -1,0 +1,30 @@
+<aside role="complementary">
+  <h2>Addtional info</h2>
+
+  <p>Vestibulum viverra <strong>consectetur enim vel rutrum</strong>. Mauris hendrerit sodales congue. Etiam malesuada
+    nibh id sapien tincidunt vitae rhoncus nunc tincidunt.</p>
+
+  <p>Curabitur posuere libero sit amet est tristique egestas. Duis porta tempor tristique. Nam in erat sed leo lacinia
+    vestibulum vitae in ipsum.</p>
+
+  <p><a href="#">Jump now <span class="icon">:</span></a></p>
+</aside>
+
+<article class="post content organizations">
+
+  <h2><%= t 'Information about company' %> <%= @organization.firm %></h2>
+  <%= '+' if @organization.phone.size > 10 and @organization.phone[0].to_i == 7 %><%= number_to_phone @organization.phone, area_code: true %>
+  <%= '|' if @organization.phone.present? %>
+  <%= mail_to @organization.email %>
+  <hr>
+  <p>
+    <%= @organization.info %>
+  </p>
+
+  <% @portfolios.each do |portfolio| %>
+    <%= render 'organizationFull', unit: portfolio %>
+  <% end %>
+  <div id="pagination">
+    <%= will_paginate @portfolios %>
+  </div>
+</article>

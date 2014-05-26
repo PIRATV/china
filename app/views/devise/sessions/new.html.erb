@@ -1,0 +1,16 @@
+<%= render '/devise/form', header: t('Sign in') %>
+
+<%= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f| %>
+    <div>
+      <%= f.label :email, t(:email) %>
+      <%= f.email_field :email, autofocus: true, required: true %>
+    </div>
+
+    <div><%= f.label :password, t(:password) %>
+      <%= f.password_field :password, required: true %>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+        <div><%= f.check_box :remember_me %> <%= f.label :remember_me, t(:remember_me) %></div>
+    <% end -%>
+    <div><%= f.submit t('Sign'), class: 'button' %></div>
+<% end %>

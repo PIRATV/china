@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="no-js" lang="<%= locale %>">
+<head>
+  <title><%= page_title yield(:title) %></title>
+  <meta charset="utf-8">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header class="clearfix">
+  <div class="container">
+    <%= link_to app_name, root_path, id: 'logo' %>
+    <ul class="social-icons">
+      <li>
+        <%= link_to create_url('language', 'english'), title: 'English' do %>
+          <%= image_tag image_path('flag_english.gif'), style: 'margin-top:5px' %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to create_url('language', 'russian'), title: 'Русский язык' do %>
+          <%= image_tag image_path('flag_russian.gif') %>
+        <% end %>
+      </li>
+      <li><%= link_to '^', '#', class: 'icon flip' %></li>
+      <li><%= link_to 'T', '#', class: 'icon' %></li>
+      <li><%= link_to '^', '#', class: 'icon' %></li>
+    </ul>
+    <nav class="clearfix">
+      <%= render 'layouts/menu' %>
+    </nav>
+  </div>
+</header>
+
+<section role="banner">
+  <hgroup>
+    <%= yield(:banner) %>
+  </hgroup>
+  <% if flash[:notice].present? or flash[:info].present? or flash[:alert].present? %>
+    <article role="main" class="clearfix">
+      <div class="post">
+        <% flash.each do |type, message| %>
+          <div class="alert <%= bootstrap_class_for(type) %> fade in">
+            <button class="close" data-dismiss="alert">×</button>
+            <%= message %>
+          </div>
+        <% end %>
+      </div>
+    </article>
+  <% end %>
+  <%= yield(:article) %>
+</section>
+
+<section class="container">
+  <%= yield %>
+  <div style="height: 30px"></div>
+  <%= render 'layouts/columns' %>
+</section>
+
+<%= render 'layouts/footer' %>
+
+<%= render 'layouts/metrika' %>
+</body>
+</html>
