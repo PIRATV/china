@@ -20,6 +20,7 @@ ru:
   Write to: 'Написать на'
   Information about company: 'Информация о компании'
   More: 'Подробнее'
+  Nothing found: 'Ничего не найдено'
 
   will_paginate:
     previous_label: '«'

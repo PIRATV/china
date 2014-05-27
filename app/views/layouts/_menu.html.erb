@@ -1,66 +1,16 @@
 <ul role="navigation">
-  <li>
-    <%= link_to root_path do %>
-      <span class="icon">S</span>
-      <%= t('Home') %>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to create_url('catalog') do %>
-      <span class="icon">N</span>
-      <%= t('Catalog') %>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to create_url('contacts') do %>
-      <span class="icon">M</span>
-      <%= t('Contact') %>
-    <% end %>
-  </li>
-
-  <li>
-    <%= link_to create_url('organizations') do %>
-      <span class="icon">x</span>
-      <%= t('Organizations') %>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to 'http://piratv.ru' do %>
-      <span class="icon">U</span>
-      <%= t('PIRA') %>
-    <% end %>
-  </li>
+  <li><%= link_to t('Home'), root_path %></li>
+  <li><%= link_to t('Catalog'), create_url('catalog') %></li>
+  <li><%= link_to t('Contact'), create_url('contacts') %></li>
+  <li><%= link_to t('Organizations'), create_url('organizations') %></li>
+  <li><%= link_to t('PIRA'), 'http://piratv.ru' %></li>
 
   <% unless user_signed_in? %>
-
-    <li>
-      <%= link_to create_url('user', 'register') do %>
-        <span class="icon">a</span>
-        <%= t('Registration') %>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to create_url('user', 'login') do %>
-        <span class="icon">b</span>
-        <%= t('Login') %>
-      <% end %>
-    </li>
-
+    <li><%= link_to t('Registration'), create_url('user', 'register') %></li>
+    <li><%= link_to t('Login'), create_url('user', 'login') %></li>
   <% else %>
-
-    <li>
-      <%= link_to create_url('user', 'profile') do %>
-        <span class="icon">j</span>
-        <%= t('Profile') %>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to create_url('user', 'logout'), method: :delete, confirm: t('Are you sure?') do %>
-        <span class="icon">v</span>
-        <%= t('Logout') %>
-      <% end %>
-    </li>
-
+    <li><%= link_to t('Profile'), create_url('user', 'profile') %></li>
+    <li><%= link_to t('Logout'), create_url('user', 'logout'), method: :delete, confirm: t('Are you sure?') %></li>
   <% end %>
 
 </ul>

@@ -84,7 +84,7 @@ strong {
 }
 .container .post {
   background: image_url('reddragon.gif') no-repeat;
-  background-position:190px 520px;	
+  background-position:190px 520px;
 }
 span.icon {
   text-transform: none !important;
@@ -147,7 +147,8 @@ ul[role=navigation] {
   padding: 0;
   overflow: hidden;
   font: 0.9em/1.67em Helvetica, Arial, Tahoma;
-  text-transform: uppercase;
+  //text-transform: uppercase;
+  font-style: italic;
 }
 ul[role=navigation] li {
   list-style: none;
@@ -165,13 +166,16 @@ ul[role=navigation] li a {
   -webkit-border-radius: 3px 3px 0 0;
   border-radius: 3px 3px 0 0;
   /*color: #dfe9f2;*/
-    font-size: 14px;
+    font-size: 15px;
     color: #333;
+  padding-top: 6px;
+  padding-bottom: 8px;
+  color: #757575;
   display: block;
   /*padding: 7px 20px 5px;*/
     margin: 3px;
     margin-bottom: 10px;
-    text-shadow: 3px 0 30px yellow;
+    text-shadow: 0 0 60px red;
 }
 ul[role=navigation] li a:hover,
 ul[role=navigation] li a:focus,
@@ -182,7 +186,7 @@ ul[role=navigation] li a.activePage {
   /*background: rgb(226, 17, 17);*/
   /*color: White;*/
     /*font-size: 17px;*/
-    font-size: 14px;
+    font-size: 15px;
     color: red;
   -moz-box-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
   -webkit-box-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
@@ -926,4 +930,11 @@ footer[role=contentinfo] p .left {
 }
 .organizations {
   background: none!important;
+}
+
+body {
+  background: #FCFCFC;
+  header {
+    background-color: #E9E9E9;
+  }
 }

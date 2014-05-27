@@ -10,15 +10,19 @@
   <p><a href="#">Jump now <span class="icon">:</span></a></p>
 </aside>
 <article class="post content organizations">
-  <ul class="post-list">
-    <% @organizations.each do |organization| %>
-      <li>
-        <%= render 'organization', organization: organization %>
-      </li>
-      <hr>
-    <% end %>
-  </ul>
-  <div id="pagination">
-    <%= will_paginate @organizations %>
-  </div>
+  <% if @organizations.present? %>
+    <ul class="post-list">
+      <% @organizations.each do |organization| %>
+        <li>
+          <%= render 'organization', organization: organization %>
+        </li>
+        <hr>
+      <% end %>
+    </ul>
+    <div id="pagination">
+      <%= will_paginate @organizations %>
+    </div>
+  <% else %>
+    <%= t 'Nothing found' %>..
+  <% end %>
 </article>
