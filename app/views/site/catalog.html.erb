@@ -1,2 +1,26 @@
-<h1>Site#catalog</h1>
-<p>Find me in app/views/site/catalog.html.erb</p>
+<% content_for :banner do %>
+  <h1>Каталог</h1>
+<% end %>
+
+<% if @catalog.empty? %>
+  <div style="text-align: center"> Ничего не найдено..</div>
+<% else %>
+  <ul class="thumb-list">
+    <% @catalog.each do |image| -%>
+      <% image = image_path(image.sub /^.+(catalog.*)$/i, '\\1') %>
+      <li style="height: 140px;">
+        <figure>
+          <%= link_to image, rel: 'prettyPhoto[gallery]' do %>
+            <%= image_tag image, alt: '', style: 'height:120px' %>
+          <% end %>
+        </figure>
+      </li>
+    <% end %>
+  </ul>
+  <div id="pagination">
+    <div class="page_info">
+      <%= page_entries_info @catalog %>
+    </div>
+    <%= will_paginate @catalog, class: 'digg_pagination' %>
+  </div>
+<% end %>

@@ -1,11 +1,12 @@
 class SiteController < ApplicationController
   before_filter :authenticate_user!, only: :profile
-
+  require 'will_paginate/array'
   def index
   end
 
   def catalog
-    @catalog = Catalog.all
+    #@catalog = Catalog.all
+    @catalog = Dir.glob("#{Rails.root}/app/assets/images/catalog/*").reverse.paginate(page: params[:page], per_page: 12)
   end
 
   def profile

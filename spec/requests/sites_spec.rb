@@ -7,10 +7,4 @@ describe "Sites", :type => :request do
       expect(response.status).to be(200)
     end
   end
-  describe 'GET organizations' do
-    it 'should have "Not found"' do
-      visit '/organizations/2'
-      expect(page).to have_text('не найдено..')
-    end
-  end
 end

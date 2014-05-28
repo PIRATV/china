@@ -1,7 +1,5 @@
 $(function () {
 
-    $('.fancybox').fancybox()
-
     function setBoxes()
     {
         var figBox = 0
