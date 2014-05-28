@@ -147,8 +147,11 @@ ru:
       models:
         user:
           attributes:
+            site:
+              taken: 'уже указан'
             firm:
               blank: 'не введена. Заполните поле %{attribute}'
+              taken: 'уже существует'
             email:
               blank: 'не введен. Заполните поле %{attribute}'
               invalid: 'неверного формата'

@@ -143,8 +143,11 @@ en:
       models:
         user:
           attributes:
+            site:
+              taken: 'is taken'
             firm:
               blank: 'is blank'
+              taken: 'is taken'
             email:
               blank: 'is blank'
               invalid: 'is wrong'

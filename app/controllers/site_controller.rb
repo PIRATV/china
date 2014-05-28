@@ -18,7 +18,8 @@ class SiteController < ApplicationController
   end
 
   def organizations
-    @organizations = User.all.paginate per_page: 10, page: params[:page]
+    @organizations = User.all.paginate per_page: 5, page: params[:page]
+    @rand_organization = User.all.sample 5
   end
 
   def organizationFull

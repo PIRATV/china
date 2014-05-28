@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates_presence_of :firm
+  validates_uniqueness_of :firm, :site, :email
   has_many :portfolios
 
   def online?

@@ -9,10 +9,7 @@
   <% if @organizations.present? %>
     <ul class="post-list">
       <% @organizations.each do |organization| %>
-        <li>
-          <%= render 'organization', organization: organization %>
-        </li>
-        <hr>
+        <li><%= render 'organization', organization: organization, show_info: true %></li>
       <% end %>
     </ul>
     <div id="pagination">

@@ -568,15 +568,15 @@ aside[role=complementary] {
   background: #f0f0f0;
   border-right: 1px solid #e0e0e0;
   display: table-cell;
-  padding: 10px 20px;
-  width: 180px;
+  padding: 5px 10px;
+  width: 220px;
 }
 aside[role=complementary] h2 {
-  font-size: 16px;
+  font-size: 14px;
   color: black;
 }
 aside[role=complementary] p {
-  font-size: 11px;
+  font-size: 10px;
 }
 .content {
   display: table-cell;
@@ -609,7 +609,7 @@ aside[role=complementary] p {
 .post-list li {
   list-style: none;
   border-bottom: 2px dotted #eaeaea;
-  margin: 0 0 30px;
+  //margin: 0 0 30px;
 }
 .post-list li:last-child {
   border: 0;

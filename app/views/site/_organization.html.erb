@@ -9,7 +9,8 @@
   <%= '|' if organization.site.present? %>
   <%= link_to_if organization.site.present?, organization.site.gsub(/^https?:\/\//i, ''), organization.site.starts_with?('http') ? organization.site : "http://#{organization.site}", target: '_blank' %>
 </p>
-
+<%- if show_info %>
 <p>
   <%= truncate(word_wrap(organization.info), length: 50) { "<br>#{link_to t('More'), create_url('organizations', organization.id)}".html_safe } %>
 </p>
+<% end -%>
