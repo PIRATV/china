@@ -147,12 +147,12 @@ ru:
       models:
         user:
           attributes:
-
             firm:
               blank: 'не введена. Заполните поле %{attribute}'
             email:
               blank: 'не введен. Заполните поле %{attribute}'
               invalid: 'неверного формата'
+              taken: 'занят'
             password:
               blank: 'не введен. Заполните поле %{attribute}'
               too_short: 'слишком короткий'

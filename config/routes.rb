@@ -2,7 +2,7 @@ China::Application.routes.draw do
 
   root 'site#index'
 
-
+  get '/language/:language', to: 'site#language'
   get '/:action', to: 'site#:action', constraints: { action: /catalog|organizations/i }
   get 'organizations/:id', to: 'site#organizationFull', constraints: { id: /\d+/ }
 

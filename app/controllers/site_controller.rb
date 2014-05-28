@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
   before_filter :authenticate_user!, only: :profile
   require 'will_paginate/array'
+
   def index
   end
 
@@ -25,6 +26,12 @@ class SiteController < ApplicationController
     @organization = User.find(params[:id])
     @portfolios = @organization.portfolios.paginate page: params[:page], per_page: 9
     raise ActiveRecord::RecordNotFound if @organization.nil?
+  end
+
+  def language
+    session[:language] = params[:language][0..1]
+    set_language
+    redirect_back_or_default root_path
   end
 
   private

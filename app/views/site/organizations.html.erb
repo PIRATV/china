@@ -1,14 +1,10 @@
-<aside role="complementary">
-  <h2>Addtional info</h2>
+<% content_for :banner do %>
+  <h1><%= t 'Organizations' %></h1>
+<% end %>
+<% content_for :title, t('Organizations') %>
 
-  <p>Vestibulum viverra <strong>consectetur enim vel rutrum</strong>. Mauris hendrerit sodales congue. Etiam malesuada
-    nibh id sapien tincidunt vitae rhoncus nunc tincidunt.</p>
+<%= render 'user_info' if user_signed_in? %>
 
-  <p>Curabitur posuere libero sit amet est tristique egestas. Duis porta tempor tristique. Nam in erat sed leo lacinia
-    vestibulum vitae in ipsum.</p>
-
-  <p><a href="#">Jump now <span class="icon">:</span></a></p>
-</aside>
 <article class="post content organizations">
   <% if @organizations.present? %>
     <ul class="post-list">

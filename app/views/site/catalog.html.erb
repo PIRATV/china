@@ -1,6 +1,7 @@
 <% content_for :banner do %>
-  <h1>Каталог</h1>
+  <h1><%= t 'Catalog' %></h1>
 <% end %>
+<% content_for :title, t('Catalog') %>
 
 <% if @catalog.empty? %>
   <div style="text-align: center"> Ничего не найдено..</div>

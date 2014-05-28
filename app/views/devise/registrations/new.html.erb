@@ -42,7 +42,9 @@
     </div>
     <br>
 
-    <div><%= f.submit t('Sign up'), class: 'button inactive', id: 'btn' %>
+    <div><%= f.submit t('Sign up'), class: 'btn inactive', id: 'btn' %>
     </div>
   <% end %>
+
+  <%= render 'devise/shared/links' %>
 </div>

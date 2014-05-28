@@ -3,8 +3,8 @@ module ApplicationHelper
     I18n.t 'China in your city'
   end
   def page_title title
-    return app_name if title.blank?
-    "#{app_name} - #{t title}"
+    return app_name if title.empty?
+    "#{app_name} - #{title}"
   end
   def home_url
     '/'
