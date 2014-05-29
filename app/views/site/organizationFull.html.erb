@@ -1,14 +1,9 @@
-<aside role="complementary">
-  <h2>Addtional info</h2>
+<% content_for :banner do %>
+  <h1><%= t @organization.category.category %> - <%= @organization.firm %></h1>
+<% end %>
+<% content_for :title, "#{t('Organizations')} - #{t @organization.category.category} - #{@organization.firm}" %>
 
-  <p>Vestibulum viverra <strong>consectetur enim vel rutrum</strong>. Mauris hendrerit sodales congue. Etiam malesuada
-    nibh id sapien tincidunt vitae rhoncus nunc tincidunt.</p>
-
-  <p>Curabitur posuere libero sit amet est tristique egestas. Duis porta tempor tristique. Nam in erat sed leo lacinia
-    vestibulum vitae in ipsum.</p>
-
-  <p><a href="#">Jump now <span class="icon">:</span></a></p>
-</aside>
+<%= render 'categories' %>
 
 <article class="post content organizations">
 
@@ -33,6 +28,6 @@
     <%= will_paginate @portfolios %>
   </div>
   <div class="link_back" style="text-align: center">
-    <%= link_to t('Back'), create_url('organizations') %>
+    <%= link_to t('Back'), create_url('organizations', @organization.category.category_url) %>
   </div>
 </article>

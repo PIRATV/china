@@ -568,8 +568,8 @@ aside[role=complementary] {
   background: #f0f0f0;
   border-right: 1px solid #e0e0e0;
   display: table-cell;
-  padding: 5px 10px;
-  width: 220px;
+  padding: 5px;
+  width: 240px;
 }
 aside[role=complementary] h2 {
   font-size: 14px;
@@ -936,4 +936,9 @@ body {
   header {
     background-color: #E9E9E9;
   }
+}
+
+article .post-list li.active a {
+  color: #0088cc;
+  text-decoration: none;
 }

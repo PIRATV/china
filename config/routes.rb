@@ -4,7 +4,8 @@ China::Application.routes.draw do
 
   get '/language/:language', to: 'site#language'
   get '/:action', to: 'site#:action', constraints: { action: /catalog|organizations/i }
-  get 'organizations/:id', to: 'site#organizationFull', constraints: { id: /\d+/ }
+  get 'organizations/:category', to: 'site#organizations', constraints: {category: /[-_a-z0-9]+/i}
+  get 'organizations/:category/:id', to: 'site#organizationFull', constraints: {category: /[-_a-z0-9]+/i, id:/\d+/}
 
   get '/contacts',     to: 'contacts#new'
 

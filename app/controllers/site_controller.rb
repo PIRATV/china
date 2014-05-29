@@ -6,7 +6,6 @@ class SiteController < ApplicationController
   end
 
   def catalog
-    #@catalog = Catalog.all
     @catalog = Dir.glob("#{Rails.root}/app/assets/images/catalog/*").reverse.paginate(page: params[:page], per_page: 12)
   end
 
@@ -18,8 +17,14 @@ class SiteController < ApplicationController
   end
 
   def organizations
-    @organizations = User.all.paginate per_page: 5, page: params[:page]
-    @rand_organization = User.all.sample 5
+    if params[:category].present?
+      @organizations = User.joins(:category).where(categories: {category_url: params[:category]})
+      @category = Category.where(category_url: params[:category]).limit(1)[0]
+    else
+      @organizations = User.all
+    end
+    @organizations = @organizations.paginate per_page: 5, page: params[:page]
+    @categories = Category.all
   end
 
   def organizationFull
@@ -27,6 +32,7 @@ class SiteController < ApplicationController
     @organization = User.find(params[:id])
     @portfolios = @organization.portfolios.paginate page: params[:page], per_page: 9
     raise ActiveRecord::RecordNotFound if @organization.nil?
+    @categories = Category.all
   end
 
   def language

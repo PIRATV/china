@@ -1,0 +1,15 @@
+<%- if @categories.present? %>
+  <aside role="complementary">
+    <h2><%= t 'Categories' %></h2>
+    <article class="post content organizations">
+      <ul class="post-list">
+        <%- @categories.each do |category| %>
+          <li<%= ' class=active' if request.fullpath.downcase.include?(category.category_url.downcase) %>>
+            <%= link_to t(category.category), create_url('organizations', category.category_url) %>
+          </li>
+        <% end %>
+        <li>...</li>
+      </ul>
+    </article>
+  </aside>
+<% end %>

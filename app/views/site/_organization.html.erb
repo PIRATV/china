@@ -1,5 +1,5 @@
 <h2>
-  <%= link_to organization.firm, create_url('organizations', organization.id) %>
+  <%= link_to organization.firm, create_url('organizations', organization.category.category_url, organization.id) %>
 </h2>
 
 <p class="meta">
@@ -11,6 +11,6 @@
 </p>
 <%- if show_info %>
 <p>
-  <%= truncate(word_wrap(organization.info), length: 50) { "<br>#{link_to t('More'), create_url('organizations', organization.id)}".html_safe } %>
+  <%= truncate(word_wrap(organization.info), length: 50) { "<br>#{link_to t('More'), create_url('organizations', organization.category.category_url, organization.id)}".html_safe } %>
 </p>
 <% end -%>
