@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :phone
     devise_parameter_sanitizer.for(:sign_up) << :info
     devise_parameter_sanitizer.for(:sign_up) << :site
+    devise_parameter_sanitizer.for(:sign_up) << :category_id
   end
 
   private
