@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails china: development" uuid="b952c1a9-59b3-4aac-a9bb-279bacb5db06">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/china.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/china.devel.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails china: test" uuid="a5aecdc3-1329-43b3-aa98-35f53bf572d7">

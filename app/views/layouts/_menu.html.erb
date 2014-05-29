@@ -1,15 +1,15 @@
 <ul role="navigation">
-  <li><%= link_to t('Home'), root_path %></li>
-  <li><%= link_to t('Catalog'), create_url('catalog') %></li>
-  <li><%= link_to t('Contact'), create_url('contacts') %></li>
-  <li><%= link_to t('Organizations'), create_url('organizations') %></li>
+  <li<%= check_active_page('index') %>><%= link_to t('Home'), root_path %></li>
+  <li<%= check_active_page('Catalog') %>><%= link_to t('Catalog'), create_url('catalog') %></li>
+  <li<%= check_active_page('Contacts') %>><%= link_to t('Contact'), create_url('contacts') %></li>
+  <li<%= check_active_page('Organizations') %>><%= link_to t('Organizations'), create_url('organizations') %></li>
   <li><%= link_to t('PIRA'), 'http://piratv.ru' %></li>
 
   <% unless user_signed_in? %>
-    <li><%= link_to t('Registration'), create_url('user', 'register') %></li>
-    <li><%= link_to t('Login'), create_url('user', 'login') %></li>
+    <li<%= check_active_page('register') %>><%= link_to t('Registration'), create_url('user', 'register') %></li>
+    <li<%= check_active_page('Login') %>><%= link_to t('Login'), create_url('user', 'login') %></li>
   <% else %>
-    <li><%= link_to t('Profile'), create_url('user', 'profile') %></li>
+    <li<%= check_active_page('Profile') %>><%= link_to t('Profile'), create_url('user', 'profile') %></li>
     <li><%= link_to t('Logout'), create_url('user', 'logout'), method: :delete, confirm: t('Are you sure?') %></li>
   <% end %>
 
