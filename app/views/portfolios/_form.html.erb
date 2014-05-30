@@ -1,0 +1,32 @@
+<%= simple_form_for @portfolio do |f| %>
+  <% if @portfolio.errors.any? %>
+    <div id="error_explanation">
+      <% if locale == :ru %>
+        <h2>Пожалуйста, исправьте следующие ошибки (<%= @portfolio.errors.count %>):</h2>
+      <% else %>
+        <h2><%= pluralize(@portfolio.errors.count, 'error') %> prohibited
+          this code from being saved:</h2>
+      <% end %>
+
+      <ul>
+        <% @portfolio.errors.full_messages.each do |msg| %>
+          <li><%= msg.sub('Image', '') %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.input :title %>
+  </div>
+  <div>
+    <%= f.label :image, t(:image) %>
+    <%= f.input_field :image %>
+  </div>
+  <div>
+    <%= f.input :video %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit t(@portfolio.new_record? ? 'Upload' : 'Update'), class: 'btn' %>
+  </div>
+
+<% end %>

@@ -7,9 +7,15 @@
     <div style="float: right" id="license">
       <%= render 'license' %>
     </div>
+
     <div>
       <%= f.label :firm, t(:firm) %>
       <%= f.text_field :firm, autofocus: true, required: true %>
+    </div>
+
+    <div style="margin-bottom: 10px">
+      <%= f.label :category_id, t(:category) %>
+      <%= f.collection_select :category_id, Category.order(id: :desc).all, :id, :category, required: true %>
     </div>
 
     <div>

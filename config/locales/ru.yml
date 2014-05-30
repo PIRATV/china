@@ -1,4 +1,9 @@
 ru:
+  show: 'Просмотр'
+  edit: 'Изменить'
+  destroy: 'Удалить'
+  Add: 'Добавить'
+
   Categories: 'Категории организаций'
   LED-продукция: 'LED-продукция'
   Мебель: 'Мебель'
@@ -10,6 +15,8 @@ ru:
   Оборудование и материалы: 'Оборудование и материалы'
   Бытовая техника: 'Бытовая техника'
   Мобильная техника: 'Мобильная техника'
+  Без категории: 'Без категории'
+  category: 'Категория'
 
   Thank you for your message: 'Благодарим за Ваше сообщение'
   China in your city: 'Китай в Вашем городе'
@@ -28,7 +35,7 @@ ru:
   Cannot send message: 'Сообщение не отправлено'
   Profile: 'Профиль'
   Profile updated: 'Данные профиля изменены'
-  View and change information about the company: 'Просмотр и изменение информации о компании'
+  Profile of the company: 'Профиль компании'
   Write to: 'Написать на'
   Information about company: 'Информация о компании'
   More: 'Подробнее'
@@ -59,6 +66,7 @@ ru:
   email: 'E-mail'
   password: 'Пароль'
   password_confirmation: 'Подтверждение пароля'
+  current_password: 'Текущий пароль'
   Sign in: 'Вход на сайт'
   Sign up: 'Регистрация'
   Sign: 'Войти'

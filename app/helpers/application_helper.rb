@@ -32,7 +32,8 @@ module ApplicationHelper
   end
 
   def img_exists? image
-    File.exist? image_path("#{Rails.root}/app/assets/images/#{image}")
+    File.exist? image_path("#{Rails.root}/app/assets/images/#{image}") or \
+    File.exist? image_path("#{Rails.root}/public/#{image}")
   end
 
   def meta_tags keywords, description

@@ -7,11 +7,15 @@ gem 'rails', '4.0.3'
 #gem 'mysql2'
 gem 'sqlite3'
 
+gem 'carrierwave'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+
+gem 'mini_magick'
 
 #mail
 gem 'mail_form'

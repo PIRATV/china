@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'portfolios/portfolio', unit: @portfolio %>
+
+<div class="clearfix"></div>
+
+<%= link_to t('edit'), create_url(edit_portfolio_path(@portfolio)) %> |
+<%= link_to t('Back'), create_url(portfolios_path) %>

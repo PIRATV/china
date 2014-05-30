@@ -18,16 +18,18 @@
     <%= simple_format(word_wrap @organization.info) %>
   </p>
 
-  <div class="portfolio_image">
-    <% @portfolios.each do |portfolio| %>
-      <%= render 'organizationFull', unit: portfolio %>
-    <% end %>
-  </div>
-  <div class="clearfix"></div>
-  <div id="pagination">
-    <%= will_paginate @portfolios %>
-  </div>
-  <div class="link_back" style="text-align: center">
+  <%- if @organization.portfolios %>
+    <div class="portfolio_image">
+      <% @organization.portfolios.each do |portfolio| %>
+        <%= render 'portfolios/portfolio', unit: portfolio %>
+      <% end %>
+    </div>
+    <div class="clearfix"></div>
+    <div id="pagination">
+      <%= will_paginate @portfolios %>
+    </div>
+  <% end -%>
+  <div class="link_back" style="text-align: center;margin:10px">
     <%= link_to t('Back'), create_url('organizations', @organization.category.category_url) %>
   </div>
 </article>

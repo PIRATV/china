@@ -43,6 +43,6 @@ class SiteController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit :firm, :phone, :site, :info
+    params.require(:user).permit :firm, :phone, :site, :info, :category_id
   end
 end

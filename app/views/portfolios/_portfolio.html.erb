@@ -1,0 +1,19 @@
+<div class="portfolio">
+
+  <% url = unit.image.url %>
+  <% url = "http://i1.ytimg.com/vi/#{unit.video}/mqdefault.jpg" if unit.image.blank? and unit.video.present? %>
+
+  <% if img_exists?(url) or url.start_with?('http://') %>
+
+    <% link = unit.video.blank? ? image_path(url) : "http://www.youtube.com/watch?v=#{unit.video}" %>
+    <% width = unit.width.to_i == 0 ? 640 : unit.width; height = unit.height.to_i == 0 ? 480 : unit.height %>
+
+    <span class="image">
+      <%= link_to link, rel: 'prettyPhoto[gallery]', title: unit.title do %>
+        <%= image_tag url, alt: unit.title, style: "width:#{width}px;height:#{height}px" %>
+      <% end %>
+    </span>
+
+  <% end %>
+
+</div>

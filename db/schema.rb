@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140529123542) do
+ActiveRecord::Schema.define(version: 20140530121607) do
 
   create_table "catalogs", force: true do |t|
     t.string   "path",       default: ""
@@ -29,15 +29,14 @@ ActiveRecord::Schema.define(version: 20140529123542) do
   end
 
   create_table "portfolios", force: true do |t|
-    t.string   "photo_url",  default: ""
-    t.string   "video_url",  default: ""
-    t.string   "title",      default: ""
-    t.boolean  "status",     default: true
-    t.integer  "width",      default: 0
-    t.integer  "height",     default: 0
     t.integer  "user_id"
+    t.string   "image"
+    t.string   "video"
+    t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "width"
+    t.integer  "height"
   end
 
   create_table "users", force: true do |t|

@@ -3,13 +3,16 @@ China::Application.routes.draw do
   root 'site#index'
 
   get '/language/:language', to: 'site#language'
-  get '/:action', to: 'site#:action', constraints: { action: /catalog|organizations/i }
+  get '/:action', to: 'site#:action', constraints: {action: /catalog|organizations/i}
   get 'organizations/:category', to: 'site#organizations', constraints: {category: /[-_a-z0-9]+/i}
-  get 'organizations/:category/:id', to: 'site#organizationFull', constraints: {category: /[-_a-z0-9]+/i, id:/\d+/}
+  get 'organizations/:category/:id', to: 'site#organizationFull', constraints: {category: /[-_a-z0-9]+/i, id: /\d+/}
 
-  get '/contacts',     to: 'contacts#new'
+  get '/contacts', to: 'contacts#new'
 
   match '/user/profile', to: 'site#profile', via: [:get, :patch]
+  scope 'user' do
+    resources :portfolios
+  end
 
   resources 'contacts', only: [:new, :create]
 
@@ -22,7 +25,6 @@ China::Application.routes.draw do
     unlock: 'unblock',
     registration: ''
   }
-
 
 
   # The priority is based upon order of creation: first created -> highest priority.

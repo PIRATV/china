@@ -1,7 +1,7 @@
 <% content_for :banner do %>
-  <h1><%= t 'View and change information about the company' %> <%= @user.firm %></h1>
+  <h1><%= t 'Profile of the company' %> <%= @user.firm %></h1>
 <% end %>
-<% content_for :title, 'View and change information about the company' %>
+<% content_for :title, "#{t('Profile of the company')} #{@user.firm}" %>
 
 <div id="profilePage">
   <%= simple_form_for @user, url: '/user/profile', remote: true do |f| %>
@@ -15,6 +15,16 @@
         <%= image_tag image_path('userfield_edit.gif') %>
       <% end %>
       <%= f.text_field :firm, class: 'hidden' %>
+    </p>
+
+    <p>
+      <strong><%= t :category %>:</strong>
+
+              <span><%= @user.category.category %></span>
+      <%= link_to '#', class: 'edit_info' do %>
+        <%= image_tag image_path('userfield_edit.gif') %>
+      <% end %>
+      <%= f.collection_select :category_id, Category.order(id: :desc).all, :id, :category, {}, {class: 'hidden'} %>
     </p>
 
     <p>
@@ -54,3 +64,4 @@
   <% end %>
   <div class="clear"></div>
 </div>
+<%= link_to t('Portfolio'), create_url(portfolios_path) %>
