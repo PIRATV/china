@@ -16,14 +16,16 @@
     </div>
   <% end %>
   <div>
-    <%= f.input :title %>
+    <%= f.label :title, t(:title) %>
+    <%= f.input_field :title %>
   </div>
   <div>
     <%= f.label :image, t(:image) %>
     <%= f.input_field :image %>
   </div>
   <div>
-    <%= f.input :video %>
+    <%= f.label :video, t(:video) %>
+    <%= f.input_field :video %>
   </div>
   <div class="form-actions">
     <%= f.submit t(@portfolio.new_record? ? 'Upload' : 'Update'), class: 'btn' %>

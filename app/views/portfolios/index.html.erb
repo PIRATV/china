@@ -1,4 +1,8 @@
-<h1>Listing portfolios</h1>
+<% content_for :banner do %>
+  <h1><%= "#{t('Portfolio of the company')} #{current_user.firm}" %></h1>
+<% end %>
+<% content_for :title, "#{t('Portfolio of the company')} #{current_user.firm}" %>
+<h1><%= t 'Your portfolio' %></h1>
 
 <% @portfolios.each do |portfolio| %>
 
@@ -6,9 +10,11 @@
     <%= render 'portfolios/portfolio', unit: portfolio %>
     <%= link_to image_tag(image_path('view.png')), create_url(portfolio_path(portfolio)), style: 'margin:3px' %>
     <%= link_to image_tag(image_path('userfield_edit.gif')), create_url(edit_portfolio_path(portfolio)), style: 'margin:3px' %>
-    <%= link_to image_tag(image_path('delete.gif')), create_url(portfolio_path(portfolio)), method: :delete, data: {confirm: 'Are you sure?'}, style: 'margin:3px' %>
+    <%= link_to image_tag(image_path('delete.gif')), create_url(portfolio_path(portfolio)), method: :delete, data: {confirm: t('Are you sure?')}, style: 'margin:3px' %>
   </div>
+
 <% end %>
+
 <div class="clearfix"></div>
 <br>
-<%= link_to t('Add'), new_portfolio_path %>
+<%= link_to t('Add'), create_url(new_portfolio_path) %>

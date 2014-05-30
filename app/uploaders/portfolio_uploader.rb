@@ -56,7 +56,7 @@ class PortfolioUploader < CarrierWave::Uploader::Base
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   def filename
-    "image#{secure_token(10)}#{Digest::SHA1.hexdigest(Time.now.to_s)}.#{file.extension.downcase}"
+    "image#{secure_token(10)}#{Digest::SHA1.hexdigest(Time.now.to_s)}.#{file.extension.downcase}" if file.present?
   end
 
   protected

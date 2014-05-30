@@ -10,7 +10,7 @@
     <li<%= check_active_page('Login') %>><%= link_to t('Login'), create_url('user', 'login') %></li>
   <% else %>
     <li<%= check_active_page('Profile') %>><%= link_to t('Profile'), create_url('user', 'profile') %></li>
-    <li<%= check_active_page('Portfolio') %>><%= link_to t('Portfolio'), create_url(portfolios_path) %></li>
+    <li<%= check_active_page('Portfolios') %>><%= link_to t('Portfolio'), create_url(portfolios_path) %></li>
     <li><%= link_to t('Logout'), create_url('user', 'logout'), method: :delete, confirm: t('Are you sure?') %></li>
   <% end %>
 

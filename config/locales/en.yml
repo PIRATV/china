@@ -1,4 +1,23 @@
 en:
+  show: 'Show'
+  edit: 'Edit'
+  destroy: 'Destroy'
+  Add: 'Add'
+  Portfolio: 'Portfolio'
+  Your portfolio: 'Your portfolio'
+  Portfolio of the company: 'Portfolio of the company'
+  Company: 'Company'
+  title: 'Title'
+  image: 'Image'
+  video: 'Video'
+  Upload: 'Upload'
+  Editing: 'Editing'
+  Adding portfolio: 'Adding portfolio'
+  Show portfolio item: 'Show portfolio item'
+  Portfolio was successfully created.: 'Portfolio was successfully created.'
+  Portfolio was successfully updated.: 'Portfolio was successfully updated.'
+
+
   Categories: 'Categories of organizations'
   LED-продукция: 'LED-products'
   Мебель: 'Furniture'

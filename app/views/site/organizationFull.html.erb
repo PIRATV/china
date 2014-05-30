@@ -7,7 +7,7 @@
 
 <article class="post content organizations">
 
-  <h2><%= t 'Information about company' %> <%= @organization.firm %></h2>
+  <h2><%= t 'Company' %> «<%= @organization.firm %>»</h2>
   <%= '+' if @organization.phone.size > 10 and @organization.phone[0].to_i == 7 %><%= number_to_phone @organization.phone, area_code: true %>
   <%= '|' if @organization.phone.present? %>
   <%= mail_to @organization.email %>
@@ -18,7 +18,8 @@
     <%= simple_format(word_wrap @organization.info) %>
   </p>
 
-  <%- if @organization.portfolios %>
+  <%- if @organization.portfolios.present? %>
+    <h4 style="margin-top: 30px;margin-bottom: -25px"><%= t 'Portfolio of the company' %></h4>
     <div class="portfolio_image">
       <% @organization.portfolios.each do |portfolio| %>
         <%= render 'portfolios/portfolio', unit: portfolio %>

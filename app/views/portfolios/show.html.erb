@@ -1,6 +1,16 @@
+<% content_for :banner do %>
+  <h1><%= t('Show portfolio item') %></h1>
+<% end %>
+<% content_for :title, "#{t('Portfolio of the company')} #{current_user.firm}" %>
 <p id="notice"><%= notice %></p>
 
-<%= render 'portfolios/portfolio', unit: @portfolio %>
+<% if @portfolio.image.blank? and @portfolio.video.blank? %>
+  <div>
+    <%= t 'Nothing found' %>
+  </div>
+<% else %>
+  <%= render 'portfolios/portfolio', unit: @portfolio %>
+<% end %>
 
 <div class="clearfix"></div>
 
