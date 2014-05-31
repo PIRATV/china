@@ -9,7 +9,7 @@ class Contact < MailForm::Base
   def headers
     {
       subject: 'Сообщение с сайта http://china.piratv.ru',
-      to: 'pirabusiness@bk.ru',
+      to: 'china-partners-pira@mail.ru',
       from: %("#{name}" <#{email}>)
     }
   end
