@@ -8,9 +8,9 @@ class Contact < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      subject: 'Сообщение с сайта http://china.piratv.ru',
+      subject: "Сообщение с сайта http://china.piratv.ru from <#{email}>",
       to: 'china-partners-pira@mail.ru',
-      from: %("#{name}" <#{email}>)
+      from: 'china-partners-pira@mail.ru'
     }
   end
 end
