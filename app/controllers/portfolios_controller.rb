@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = Portfolio.all
+    @portfolios = current_user.portfolios
   end
 
   # GET /portfolios/1
@@ -30,7 +30,7 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       @portfolio.user_id = current_user.id
       if @portfolio.save
-        format.html { redirect_to @portfolio, notice: t('Portfolio was successfully created.') }
+        format.html { redirect_to @portfolio, notice: t('Portfolio was successfully created') }
         format.json { render action: 'show', status: :created, location: @portfolio }
       else
         format.html { render action: 'new' }
@@ -45,7 +45,7 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       @portfolio.user_id = current_user.id
       if @portfolio.update(portfolio_params)
-        format.html { redirect_to @portfolio, notice: t('Portfolio was successfully updated.') }
+        format.html { redirect_to @portfolio, notice: t('Portfolio was successfully updated') }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
