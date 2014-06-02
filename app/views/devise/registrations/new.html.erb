@@ -1,10 +1,11 @@
 <%= render '/devise/form', header: t('Free sign up') %>
 
-<div style="width: 800px;margin: 10px auto">
+<div class="register-form" style="width: 800px;margin: 10px auto">
   <%= simple_form_for resource, as: resource_name, url: registration_path(resource_name) do |f| %>
     <%= devise_error_messages! %>
 
     <div style="float: right" id="license">
+      <%= render 'invite' %>
       <%= render 'license' %>
     </div>
 
