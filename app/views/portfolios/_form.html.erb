@@ -25,7 +25,7 @@
   </div>
   <div>
     <%= f.label :video, t(:video) %>
-    <%= f.input_field :video %>
+    http://www.youtube.com/watch?v= <%= f.input_field :video %>
   </div>
   <div class="form-actions">
     <%= f.submit t(@portfolio.new_record? ? 'Upload' : 'Update'), class: 'btn' %>
