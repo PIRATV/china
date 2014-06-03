@@ -15,16 +15,18 @@
     text-align: center;
   }
 }
+
 input.hidden {
   display: none;
 }
+
 .photo-icon {
   max-height: 30px;
 }
 
 .not_specified {
-  color:#999;
-  font-style:oblique;
+  color: #999;
+  font-style: oblique;
 }
 
 .pagination {
@@ -48,12 +50,29 @@ input.hidden {
   }
   .portfolio {
     display: inline-block;
-    float:left;
+    float: left;
   }
 }
+
 nav > ul > li.active > a, nav ul > li > a:hover {
   color: red;
 }
+
 .register-form div {
-  margin:8px;
+  margin: 8px;
+}
+
+.vjs-default-skin {
+  .vjs-big-play-button {
+    left: 40%;
+    top: 41%;
+  }
+}
+
+.video-js-box {
+  margin: 0 auto;
+  padding: 0;
+  width: 580px;
+  box-shadow: 0 0 40px #333;
+  border-radius: 5px;
 }

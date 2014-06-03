@@ -1,8 +1,8 @@
-<div class="columns">
-    <article>
+<div class="columns" style="margin: 0">
+    <article style="padding-bottom: 0">
         <figure>
                 <p style="text-align: center;margin: -25px">
-                  <iframe width="580" height="350" src="//www.youtube.com/embed/xgttxajFQ_Q" frameborder="0" allowfullscreen></iframe>
+                  <%= videojs_rails sources: { mp4: '/videos/china.mp4' }, width: 580, height: 350 %>
                 </p>
         </figure>
     </article>
