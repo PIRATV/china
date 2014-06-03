@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require prettyphoto-rails
+ *= require video-js
  *= require_tree .
  */
