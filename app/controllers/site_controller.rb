@@ -6,7 +6,11 @@ class SiteController < ApplicationController
   end
 
   def catalog
-    @catalog = Dir.glob("#{Rails.root}/app/assets/images/catalog/*").reverse.paginate(page: params[:page], per_page: 12)
+    if params[:album].present?
+      @catalog = Dir.glob("#{Rails.root}/app/assets/images/catalog/china/#{params[:album]}/*").reverse.paginate(page: params[:page], per_page: 12)
+    else
+      @type_list = Dir.glob("#{Rails.root}/app/assets/images/catalog/china/*")
+    end
   end
 
   def profile

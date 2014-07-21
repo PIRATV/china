@@ -1,4 +1,15 @@
 en:
+  sofas: 'Sofas'
+  dining_rooms: 'Dining rooms'
+  bedrooms: 'Bedrooms'
+  kitchens: 'Kitchens'
+  european_bedrooms: 'European bedrooms'
+  office_chairs: 'Office chairs'
+  mattress: 'Mattresses '
+  hippocampus_bed: 'Hippocampus beds'
+  small_dining_tables: 'Dining tables'
+  european_bed: 'European beds'
+
   show: 'Show'
   edit: 'Edit'
   destroy: 'Destroy'

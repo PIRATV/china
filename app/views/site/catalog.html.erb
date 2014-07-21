@@ -1,11 +1,30 @@
 <% content_for :banner do %>
-  <h1><%= t 'Catalog' %></h1>
+  <h1><%= t 'Catalog' %><%= " - #{t params[:album]}" if @catalog.present? %></h1>
 <% end %>
 <% content_for :title, t('Catalog') %>
+<% content_for :title, " - #{t params[:album]}" if @catalog.present? %>
 
-<% if @catalog.empty? %>
-  <div style="text-align: center"> Ничего не найдено..</div>
-<% else %>
+<% if @type_list.present? %>
+  <ul class="thumb-list">
+  <% @type_list.each do |dir| %>
+      <% image = Dir.glob("#{dir}/*.jpg")[0] %>
+      <% image = image_path("catalog/china/#{image.split('/')[-2]}/#{File.basename image}") %>
+      <% dir = File.basename(dir) %>
+
+      <li style="height: 140px;">
+
+        <figure>
+          <%= link_to create_url('catalog', dir) do %>
+            <figcaption style="text-align: center"><h5 style="margin:0"><%= t dir %></h5></figcaption>
+            <%= image_tag image, alt: '', style: 'height:120px' %>
+          <% end %>
+        </figure>
+      </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<% if @catalog.present? %>
   <ul class="thumb-list">
     <% @catalog.each do |image| -%>
       <% image = image_path(image.sub /^.+(catalog.*)$/i, '\\1') %>
