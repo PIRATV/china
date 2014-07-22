@@ -1,5 +1,6 @@
 <% content_for :banner do %>
   <h1><%= t 'Catalog' %><%= " - #{t params[:album]}" if @catalog.present? %></h1>
+  <h2><%= t 'select_what_you_want_to_order' %></h2>
 <% end %>
 <% content_for :title, t('Catalog') %>
 <% content_for :title, " - #{t params[:album]}" if @catalog.present? %>
