@@ -5,7 +5,7 @@ class PortfoliosController < ApplicationController
   # GET /portfolios
   # GET /portfolios.json
   def index
-    @portfolios = current_user.portfolios
+    @portfolios = current_user.portfolios.paginate(per_page: 30, page: params[:page])
   end
 
   # GET /portfolios/1

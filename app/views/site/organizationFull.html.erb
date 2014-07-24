@@ -18,10 +18,10 @@
     <%= simple_format(word_wrap @organization.info) %>
   </p>
 
-  <%- if @organization.portfolios.present? %>
+  <%- if @portfolios.present? %>
     <h4 style="margin-top: 30px;margin-bottom: -25px"><%= t 'Portfolio of the company' %></h4>
     <div class="portfolio_image">
-      <% @organization.portfolios.each do |portfolio| %>
+      <% @portfolios.each do |portfolio| %>
         <%= render 'portfolios/portfolio', unit: portfolio %>
       <% end %>
     </div>

@@ -15,6 +15,10 @@
 
 <% end %>
 
+
 <div class="clearfix"></div>
+<div id="pagination">
+  <%= will_paginate @portfolios %>
+</div>
 <br>
 <%= link_to t('Add'), create_url(new_portfolio_path) %>
