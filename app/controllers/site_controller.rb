@@ -34,7 +34,7 @@ class SiteController < ApplicationController
   def organizationFull
     raise ActiveRecord::RecordNotFound if params[:id].nil?
     @organization = User.find(params[:id])
-    @portfolios = @organization.portfolios.paginate page: params[:page], per_page: 9
+    @portfolios = @organization.portfolios.paginate page: params[:page], per_page: 30
     raise ActiveRecord::RecordNotFound if @organization.nil?
     @categories = Category.all
   end
