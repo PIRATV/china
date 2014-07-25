@@ -138,9 +138,11 @@ header {
   filter: flipv;
 }
 nav {
-  float: right;
+  display: block;
+  float: left;
   margin: 15px 0 0;
   clear: both;
+  margin-left: -150px;
 }
 ul[role=navigation] {
   margin: 0;
