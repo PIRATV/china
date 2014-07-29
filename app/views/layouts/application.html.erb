@@ -31,10 +31,19 @@
       <%= render 'layouts/menu' %>
     </nav>
     <div id="reginvite">
+      <% if locale == :ru %>
       Мы приглашаем Вас <%= link_to 'зарегистрироваться', create_url('user', 'register') %> на нашем сайте! <br>
       Загружайте свои работы, <br>
       указывайте информацию о своей компании - <br>
-      и все это абсолютно бесплатно!
+      и все это абсолютно бесплатно!<br>
+      Прочитайте <%= link_to 'Дилерский Договор', '/Договор.doc' %>
+      <% else %>
+        We invite you to <%= link_to 'register', create_url('user', 'register') %> on our site! <br>
+        Upload your work, <br>
+        to provide information about their company - <br>
+        and all of this absolutely free! <br>
+        Read the <%= link_to 'Dealership Agreement', '/Договор.doc' %>
+      <% end %>
     </div>
   </div>
 </header>
